@@ -1,4 +1,4 @@
-package service;
+package com.vadarodtest.currencyrateservice.service;
 
 import com.vadarodtest.currencyrateservice.data.api.CurrencyRateApiResponse;
 import com.vadarodtest.currencyrateservice.data.constant.ApiConstant;
@@ -29,7 +29,7 @@ public class CurrencyRateService {
         var restTemplate = new RestTemplate();
         var listOfApiRates = restTemplate.getForObject(url, CurrencyRateApiResponse[].class);
 
-        if (Objects.requireNonNull(listOfApiRates).length == 0) {
+        if (Objects.requireNonNull(listOfApiRates).length != 0) {
             var listOfCurrencyRates = currencyRateMapper.mapTo(List.of(listOfApiRates));
             currencyRateRepository.saveAll(listOfCurrencyRates);
             return ResponseEntity.ok("Rates saved");
