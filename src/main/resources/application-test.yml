@@ -1,0 +1,22 @@
+spring:
+  application:
+    name:
+      currencyrate-service
+  datasource:
+    driver-class-name:
+      org.h2.Driver
+    username:
+      testapi
+    password:
+      testapi
+    url: jdbc:h2:mem:currencydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  jpa:
+    database-platform:
+      org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto:
+        create-drop
+  h2:
+    console:
+      enabled:
+        true
