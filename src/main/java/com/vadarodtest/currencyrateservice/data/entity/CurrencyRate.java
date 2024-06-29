@@ -17,6 +17,8 @@ public class CurrencyRate {
     @Column(name = "currency_code")
     private String currencyCode;
 
+    private String name;
+
     private Double rate;
 
     private LocalDate date;

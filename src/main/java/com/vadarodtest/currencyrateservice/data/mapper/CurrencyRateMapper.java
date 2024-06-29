@@ -15,6 +15,7 @@ public interface CurrencyRateMapper {
     @Mapping(target = "currencyCode", source = "currencyCode")
     @Mapping(target = "rate", source = "rate")
     @Mapping(target = "date", source = "date")
+    @Mapping(target = "name", source = "name")
     List<CurrencyRate> mapTo(List<CurrencyRateApiResponse> apiResponse);
 
 }
