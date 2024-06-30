@@ -16,6 +16,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class CurrencyRateIntegrationTests {
 
+    public static final String USD_CODE = "USD";
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -28,10 +30,10 @@ public class CurrencyRateIntegrationTests {
 
         mockMvc.perform(get("/api/currency")
                         .param("date", "2024-06-29")
-                        .param("cur_code", "USD"))
+                        .param("cur_code", USD_CODE))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.currencyCode").value("USD"))
+                .andExpect(jsonPath("$.currencyCode").value(USD_CODE))
                 .andExpect(jsonPath("$.date").value("2024-06-29"))
                 .andExpect(jsonPath("$.rate").value(3.1624));
 

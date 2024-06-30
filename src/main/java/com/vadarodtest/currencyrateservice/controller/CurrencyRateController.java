@@ -2,7 +2,7 @@ package com.vadarodtest.currencyrateservice.controller;
 
 
 import com.vadarodtest.currencyrateservice.data.entity.CurrencyRate;
-import com.vadarodtest.currencyrateservice.service.CurrencyRateService;
+import com.vadarodtest.currencyrateservice.service.impl.CurrencyRateServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CurrencyRateController {
 
-    private final CurrencyRateService currencyRateService;
+    private final CurrencyRateServiceImpl currencyRateService;
 
     @PostMapping
     public ResponseEntity<String> loadRatesForDate(@RequestParam("date")
