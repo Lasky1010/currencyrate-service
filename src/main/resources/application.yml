@@ -6,10 +6,10 @@ spring:
     driver-class-name:
       org.h2.Driver
     username:
-      testapi
+      ${h2username}
     password:
-      testapi
-    url: jdbc:h2:mem:currencydb
+      ${h2pass}
+    url: jdbc:h2:mem:${dbname}
   jpa:
     database-platform:
       org.hibernate.dialect.H2Dialect

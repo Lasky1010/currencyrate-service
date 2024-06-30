@@ -21,8 +21,11 @@
 1. #### Склонируйте репозиторий:
    ```sh
    git clone https://github.com/Lasky1010/currencyrate-service.git
-2. #### По желанию настройте подключение к БД:
+2. #### Настройте подключение к БД:
+   В Environment Variables написать username, password и название БД
    [application.yml](src/main/resources/application.yml)
+   
+   Также по желанию для входа в саму БД, после запуска приложения перейти по http://localhost:8080/h2-console
 3. #### Установите зависимости и соберите проект:
     ```sh
    mvn clean install 
